@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL } from "../constants";
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_USER } from "../constants";
 
 const initialState = {
   name: '',
@@ -16,6 +16,9 @@ export default (state = initialState, action) => {
 
     case LOGIN_FAIL:
       return { ...state, isFetching: false, error: action.payload.message };
+
+    case LOGOUT_USER:
+      return { ...state, isFetching: false, error: '', name: action.payload};
 
     default:
       return state

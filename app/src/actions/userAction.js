@@ -1,4 +1,5 @@
-import {LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS} from "../constants";
+import {LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_USER} from "../constants";
+
 const VK = window.VK;
 
 export const loginUser = () => {
@@ -23,5 +24,16 @@ export const loginUser = () => {
         })
       }
     }, 4)
+  };
+};
+
+export const logoutUser = () => {
+  return (dispatch) => {
+    dispatch({
+      type: LOGOUT_USER,
+      payload: '',
+    });
+    VK.Auth.logout();
+    localStorage.removeItem('name')
   };
 };
