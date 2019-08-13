@@ -1,4 +1,8 @@
-import {LOGIN_REQUEST, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_USER} from "../constants";
+import {LOGIN_REQUEST,
+        LOGIN_FAIL,
+        LOGIN_SUCCESS,
+        LOGOUT_USER,
+        GET_FRIENDS_SUCCESS } from "../constants";
 
 const VK = window.VK;
 
@@ -10,7 +14,7 @@ export const loginUser = () => {
 
     VK.Auth.login(r => {
       if (r.session) {
-        const username = r.session.user.first_name
+        const username = r.session.user.first_name;
         dispatch({
           type: LOGIN_SUCCESS,
           payload: username,
@@ -36,4 +40,19 @@ export const logoutUser = () => {
     VK.Auth.logout();
     localStorage.removeItem('name')
   };
+};
+
+export const getFriendsFromVK = (count) => {
+  return (dispatch) => {
+    VK.Api.call('friends.get', {fields: 'photo_200', count, v: '5.80'}, r => {
+      const friendItems = r.response.items;
+      console.log(r)
+      if(!r.error){
+        dispatch({
+          type: GET_FRIENDS_SUCCESS,
+          payload: friendItems
+        })
+      }
+    })
+  }
 };
