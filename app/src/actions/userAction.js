@@ -34,10 +34,9 @@ export const loginUser = () => {
 export const logoutUser = () => {
   return (dispatch) => {
     dispatch({
-      type: LOGOUT_USER,
-      payload: '',
+      type: LOGOUT_USER
     });
-    VK.Auth.logout();
+    VK.Auth.logout()
     localStorage.removeItem('name')
   };
 };
