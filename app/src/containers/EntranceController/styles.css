@@ -1,0 +1,28 @@
+.btn-wrapped {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    color: white;
+    background: #597da3;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-login:hover{
+    background: #456cac;
+}
+
+.fa-vk {
+    padding-right: 10px;
+    font-size: 30px;
+}

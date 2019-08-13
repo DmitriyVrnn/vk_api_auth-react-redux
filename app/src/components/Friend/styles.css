@@ -1,0 +1,19 @@
+.page-name{
+    font-size: 20px;
+}
+
+.photo{
+    border-radius: 50%;
+}
+
+.link-user{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-user:link, .link-user:visited {
+    color: black;
+}

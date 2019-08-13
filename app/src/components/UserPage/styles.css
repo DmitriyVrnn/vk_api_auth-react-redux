@@ -1,0 +1,32 @@
+.wrapped-user-info{
+    width: 22em;
+    padding: 10px;
+    margin: 50px auto;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.btn-logout{
+    height: 35px;
+    padding: 5px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100px;
+    background: #2196f3;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fa-sign-out-alt{
+    padding-left: 5px;
+}

@@ -1,20 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {loginUser, logoutUser, getFriendsFromVK} from "../../actions/userAction";
 
-import User from '../../components/User';
+import UserPage from '../../components/UserPage';
 
-class EntranceController extends Component {
-  render() {
-    const {user, loginUser, logoutUser, getFriendsFromVK, friendList} = this.props;
+import './styles.css';
+
+const EntranceController = ({user, loginUser, logoutUser, getFriendsFromVK, friendList}) => {
+  const getStorageName = localStorage.getItem('name');
+  if (user || getStorageName) {
     return (
-        <User name={user}
-              loginUser={loginUser}
-              logoutUser={logoutUser}
-              getFriendsFromVK={getFriendsFromVK}
-              friendList={friendList}/>
+        <UserPage name={user}
+                  storageName={getStorageName}
+                  logoutUser={logoutUser}
+                  friendList={friendList}
+                  getFriendsFromVK={getFriendsFromVK}/>
     )
-  }
+  } else
+    return (
+        <div className="btn-wrapped">
+          <button className="btn-login" onClick={loginUser}>
+            <span><i className="fab fa-vk"></i></span>
+            Войти
+          </button>
+        </div>
+    )
 };
 
 export default connect(state => ({
