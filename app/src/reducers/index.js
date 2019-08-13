@@ -1,4 +1,6 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_USER, GET_FRIENDS_SUCCESS, GET_FRIENDS } from "../constants";
+import {
+  LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_USER, GET_FRIENDS_SUCCESS, GET_FRIENDS,
+} from '../constants';
 
 const initialState = {
   name: '',
@@ -19,15 +21,19 @@ export default (state = initialState, action) => {
       return { ...state, isFetching: false, error: action.payload.message };
 
     case LOGOUT_USER:
-      return { ...state, isFetching: false, error: '', name: action.payload};
+      return {
+        ...state, isFetching: false, error: '', name: action.payload,
+      };
 
     case GET_FRIENDS:
       return { ...state, error: '', isFetching: true };
 
     case GET_FRIENDS_SUCCESS:
-      return { ...state, isFetching: false, error: '', friendList: action.payload };
+      return {
+        ...state, isFetching: false, error: '', friendList: action.payload,
+      };
 
     default:
-      return state
+      return state;
   }
 };

@@ -6,7 +6,7 @@ import EntranceController from './containers/EntranceController';
 function App() {
   return (
     <div className="App">
-     <EntranceController/>
+      <EntranceController />
     </div>
   );
 }
