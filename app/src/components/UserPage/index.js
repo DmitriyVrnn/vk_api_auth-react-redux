@@ -7,22 +7,22 @@ import './styles.css';
 
 export default class UserPage extends Component {
   componentDidMount() {
-    // eslint-disable-next-line react/prop-types
     const { getFriendsFromVK } = this.props;
-    const friendsCount = 5; // Количество друзей, которых необходимо вывести
+    // количество друзей, которых необходимо вывести
+    const friendsCount = 5;
     getFriendsFromVK(friendsCount);
   }
 
   render() {
     const {
-      name, storageName, logoutUser, friendList,
+      name, storageName, logoutUser, friendList, isLoading,
     } = this.props;
     return (
       <section className="user-page">
         <div className="wrapped-user-info">
           <div className="user-info">
             <h2>
-            Привет, { name || storageName }!
+            Привет, {name || storageName }!
             </h2>
             {storageName !== null ? (
               <button className="btn-logout" type="button" onClick={logoutUser}>
@@ -32,7 +32,9 @@ export default class UserPage extends Component {
             ) : null}
           </div>
         </div>
-        <FriendList friendList={friendList} />
+        {isLoading
+          ? <p>Загрузка...</p>
+          : <FriendList friendList={friendList} />}
       </section>
     );
   }
@@ -40,12 +42,15 @@ export default class UserPage extends Component {
 
 UserPage.propTypes = {
   name: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   storageName: PropTypes.string,
+  getFriendsFromVK: PropTypes.func,
   logoutUser: PropTypes.func.isRequired,
   friendList: PropTypes.arrayOf(PropTypes.any),
 };
 
 UserPage.defaultProps = {
+  getFriendsFromVK: () => {},
   storageName: '',
   friendList: [],
 };

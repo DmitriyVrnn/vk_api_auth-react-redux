@@ -9,12 +9,13 @@ import UserPage from '../../components/UserPage';
 import './styles.css';
 
 const EntranceController = ({
-  user, loginUserConnect, logoutUserConnect, getFriendsFromVKConnect, friendList,
+  user, loginUserConnect, logoutUserConnect, getFriendsFromVKConnect, friendList, isLoading,
 }) => {
   const getStorageName = localStorage.getItem('name');
   if (user || getStorageName) {
     return (
       <UserPage
+        isLoading={isLoading}
         name={user}
         storageName={getStorageName}
         logoutUser={logoutUserConnect}
@@ -39,6 +40,7 @@ const EntranceController = ({
 const mapStateToProps = (state) => ({
   user: state.name,
   friendList: state.friendList,
+  isLoading: state.isLoading,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
@@ -52,6 +54,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(EntranceController);
 EntranceController.propTypes = {
   user: PropTypes.string,
   loginUserConnect: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   logoutUserConnect: PropTypes.func.isRequired,
   getFriendsFromVKConnect: PropTypes.func,
   friendList: PropTypes.arrayOf(PropTypes.any),
