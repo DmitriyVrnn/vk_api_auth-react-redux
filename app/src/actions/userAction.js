@@ -8,7 +8,7 @@ import {
 
 const { VK } = window;
 
-// авторизация
+// Вход
 export const loginUser = () => (dispatch) => {
   dispatch({
     type: LOGIN_REQUEST,
@@ -31,7 +31,7 @@ export const loginUser = () => (dispatch) => {
   }, 4);
 };
 
-// выход
+// Выход
 export const logoutUser = () => (dispatch) => {
   dispatch({
     type: LOGOUT_USER,
@@ -40,7 +40,7 @@ export const logoutUser = () => (dispatch) => {
   localStorage.removeItem('name');
 };
 
-// получение друзей
+// Получение друзей
 export const getFriendsFromVK = (count) => (dispatch) => {
   dispatch({
     type: GET_FRIENDS_REQUEST,

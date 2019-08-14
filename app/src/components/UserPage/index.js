@@ -8,7 +8,7 @@ import './styles.css';
 export default class UserPage extends Component {
   componentDidMount() {
     const { getFriendsFromVK } = this.props;
-    // количество друзей, которых необходимо вывести
+    // Количество друзей, которых необходимо вывести
     const friendsCount = 5;
     getFriendsFromVK(friendsCount);
   }
