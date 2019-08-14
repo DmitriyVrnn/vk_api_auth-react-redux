@@ -45,7 +45,7 @@ export const getFriendsFromVK = (count) => (dispatch) => {
   dispatch({
     type: GET_FRIENDS_REQUEST,
   });
-  VK.Api.call('friends.get', { fields: 'photo_200', count, v: '5.80' }, (r) => {
+  VK.Api.call('friends.get', { fields: 'username', count, v: '5.80' }, (r) => {
     const friendItems = r.response.items;
     if (!r.error) {
       dispatch({
