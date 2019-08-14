@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.css';
 
-// eslint-disable-next-line react/prop-types
 const Friend = ({
   first_name, last_name, photo, id,
 }) => (
@@ -13,3 +13,10 @@ const Friend = ({
 );
 
 export default Friend;
+
+Friend.propTypes = {
+  first_name: PropTypes.string.isRequired,
+  last_name: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};

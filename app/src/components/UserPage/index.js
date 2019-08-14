@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import FriendList from '../FriendList';
 
@@ -21,7 +22,7 @@ export default class UserPage extends Component {
         <div className="wrapped-user-info">
           <div className="user-info">
             <h2>
-            Привет, { name || storageName }
+            Привет, { name || storageName }!
             </h2>
             {storageName !== null ? (
               <button className="btn-logout" type="button" onClick={logoutUser}>
@@ -36,3 +37,15 @@ export default class UserPage extends Component {
     );
   }
 }
+
+UserPage.propTypes = {
+  name: PropTypes.string.isRequired,
+  storageName: PropTypes.string,
+  logoutUser: PropTypes.func.isRequired,
+  friendList: PropTypes.arrayOf(PropTypes.any),
+};
+
+UserPage.defaultProps = {
+  storageName: '',
+  friendList: [],
+};

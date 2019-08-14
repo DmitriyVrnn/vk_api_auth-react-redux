@@ -1,15 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Friend from '../Friend';
 
 import './styles.css';
 
-// eslint-disable-next-line react/prop-types
 const FriendList = ({ friendList }) => (
   <>
     <h1 className="title">Список друзей</h1>
     <ul className="list-friends">
-      {/* eslint-disable-next-line react/prop-types */}
       {friendList.map((user) => (
         <li
           className="list-friends-item"
@@ -26,5 +25,12 @@ const FriendList = ({ friendList }) => (
     </ul>
   </>
 );
-
 export default FriendList;
+
+FriendList.propTypes = {
+  friendList: PropTypes.arrayOf(PropTypes.any),
+};
+
+FriendList.defaultProps = {
+  friendList: [],
+};
