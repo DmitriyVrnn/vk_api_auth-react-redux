@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/vk_api_auth-react-redux/static/css/main.f0cdf0f1.chunk.css",
-    "main.js": "/vk_api_auth-react-redux/static/js/main.6a2ad2cf.chunk.js",
-    "main.js.map": "/vk_api_auth-react-redux/static/js/main.6a2ad2cf.chunk.js.map",
+    "main.js": "/vk_api_auth-react-redux/static/js/main.789e1842.chunk.js",
+    "main.js.map": "/vk_api_auth-react-redux/static/js/main.789e1842.chunk.js.map",
     "runtime~main.js": "/vk_api_auth-react-redux/static/js/runtime~main.499427e2.js",
     "runtime~main.js.map": "/vk_api_auth-react-redux/static/js/runtime~main.499427e2.js.map",
     "static/js/2.4f523fd4.chunk.js": "/vk_api_auth-react-redux/static/js/2.4f523fd4.chunk.js",
     "static/js/2.4f523fd4.chunk.js.map": "/vk_api_auth-react-redux/static/js/2.4f523fd4.chunk.js.map",
     "index.html": "/vk_api_auth-react-redux/index.html",
-    "precache-manifest.8355f1b105609c252996fb45063c7f7f.js": "/vk_api_auth-react-redux/precache-manifest.8355f1b105609c252996fb45063c7f7f.js",
+    "precache-manifest.9d48f2fe418ef8c62123f7c9fd8358bb.js": "/vk_api_auth-react-redux/precache-manifest.9d48f2fe418ef8c62123f7c9fd8358bb.js",
     "service-worker.js": "/vk_api_auth-react-redux/service-worker.js",
     "static/css/main.f0cdf0f1.chunk.css.map": "/vk_api_auth-react-redux/static/css/main.f0cdf0f1.chunk.css.map"
   }
